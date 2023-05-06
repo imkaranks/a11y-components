@@ -1,0 +1,38 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+[role='search'] {
+  display: flex;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  max-width: 700px;
+}
+#search-field {
+  flex: 1;
+  padding: .5em 1em;
+}
+button[type='submit'] {
+  padding: .5em 2em;
+  border-radius: 0 .25rem .25rem 0;
+  max-width: 7rem;
+  border-color: rgb(50 50 250);
+  background-color: rgb(50 50 250);
+}
+button[type='submit']:hover,
+button[type='submit']:focus-visible {
+  border-color: rgb(100 100 250);
+  background-color: rgb(100 100 250);
+}
+button[type='submit'] > svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
