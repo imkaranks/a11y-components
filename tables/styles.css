@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  --clr-background: black;
+  --clr-text-primary: #000;
+  --clr-text-secondary: #090909;
+  --clr-warning: #ffc107;
+  --clr-success: #198754;
+  --clr-secondary: #adb5bd;
+  --size-icon: 2rem;
+  --space-x-icon: 0.5rem;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 0;
+  background-color: var(--clr-background);
+  color: var(--clr-text-secondary);
+  margin: 0;
+  font-family: sans-serif;
+}
+/* # Table # */
+[scope='row'] {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x-icon);
+}
+table {
+  --bg-accent: #ddd;
+  --border: 1px solid var(--bg-accent);
+  --bg-row: white;
+  --bg-row-accent: #f2f2f2;
+
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: scroll;
+}
+table > caption {
+  font-weight: 600;
+  color: var(--clr-text-primary);
+  margin-bottom: 0.5rem;
+}
+thead {
+  background-color: var(--bg-row-accent);
+}
+td, th {
+  border: var(--border);
+  padding: .5em;
+}
+tr:nth-child(even) {
+  background-color: var(--bg-row-accent);
+}
+tr:hover {
+  background-color: var(--bg-accent);
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: var(--clr-text-primary);
+}
+/* # Container # */
+.container {
+  max-width: 900px;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+/* # Avatar Badge # */
+.avatar {
+  width: var(--size-icon);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* # Status Badge # */
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x-icon);
+}
+[data-status] {
+  --bg-status: unset;
+  display: inline-block;
+  width: var(--size-icon);
+  aspect-ratio: 1;
+  background-color: var(--bg-status);
+  border-radius: 50%;
+}
+[data-status="new"] {
+  --bg-status: var(--clr-warning);
+}
+[data-status="approved"] {
+  --bg-status: var(--clr-success);
+}
+[data-status="inactive"] {
+  --bg-status: var(--clr-secondary);
+}
+/* # Color Scheme # */
+@media (prefers-color-scheme: dark) {
+  body {
+    --clr-background: black;
+    --clr-text-primary: white;
+    --clr-text-secondary: gray;
+  }
+  table {
+    --bg-accent: hsl(0 0% 10%);
+    --border: 1px solid var(--bg-accent);
+    --bg-row: black;
+    --bg-row-accent: hsl(0 0% 5%);
+  }
+}
+@media (max-width: 40em) {
+  body {
+    --size-icon: 1.5rem;
+  }
+  tr,
+  th,
+  td {
+    display: block;
+  }
+  tbody > tr {
+    margin-top: .5rem;
+  }
+}
