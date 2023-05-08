@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>A11y Components | Navigation</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="#primary-navigation" class="visually-hidden" id="skip-to-nav">
+        skip to navigation
+      </a>
+
+      <div class="header__site-logo">Logo</div>
+
+      <button class="btn-menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Mobile Navigation Button">
+        <span class="visually-hidden" id="mobile-nav-status">Open</span>
+        Menu
+      </button>
+
+      <nav class="header__nav" id="primary-navigation" data-expanded="false" aria-label="Main">
+        <ul class="header__nav-list">
+          <li><a href="#" class="header__nav-link active">Home<span class="visually-hidden"> (current section)</span></a></li>
+          <li><a href="#" class="header__nav-link">Our work</a></li>
+          <li><a href="#" class="header__nav-link">Articles</a></li>
+          <li><a href="#" class="header__nav-link">Events</a></li>
+          <li><a href="#" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script src="index.js"></script>
+</body>
+</html>
