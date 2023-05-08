@@ -1,0 +1,184 @@
+/* # Base Styles # */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+/* # Utilities # */
+.visually-hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+/* # Carousel # */
+.carousel {
+  position: relative;
+  height: 70vh;
+  overflow-x: hidden;
+}
+.carousel > .container {
+  height: 100%;
+}
+.carousel__slides,
+.carousel__slide-controls,
+.carousel__slidenav {
+  list-style: none;
+}
+.carousel__slides {
+  height: 100%;
+  display: flex;
+  transition: 
+    transform 300ms ease;
+}
+.carousel__slide {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+.carousel__slide-content,
+.carousel__slide-image {
+  height: 100%;
+}
+.carousel__slide-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.carousel__slide-image {
+  width: 100%;
+  max-height: 70vh;
+  align-self: end;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+}
+.carousel__slide-content > div {
+  background: linear-gradient(rgb(0 0 0 / .5), rgb(0 0 0 / .5));
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  color: lightgray;
+  text-align: center;
+}
+.carousel__slide-content > div > h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+}
+.carousel__slides {
+  transform: translate(0%);
+}
+/* # Buttons # */
+.carousel__slide-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.carousel__slide-controls :nth-child(1) {
+  grid-column: 1 / -1;
+}
+.carousel__slide-controls :nth-child(3) {
+  justify-self: end;
+}
+.btn-slide {
+  width: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: lightgray;
+  padding: 0.2rem;
+  border: none;
+  transition: 
+    background-color 300ms ease,
+    transform 300ms ease;
+}
+.btn-slide:hover,
+.btn-slide:focus-visible {
+  background-color: white;
+}
+.btn-slide:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+.btn-slide:active {
+  transform: scale(.9);
+}
+.btn-slide[data-autoslide="true"] > .btn-play-icon,
+.btn-slide[data-autoslide="false"] > .btn-pause-icon {
+  display: none;
+}
+.btn-slide[data-autoslide="false"] > .btn-play-icon,
+.btn-slide[data-autoslide="true"] > .btn-pause-icon {
+  display: initial;
+}
+/* # Carousel Nav # */
+.carousel__slidenav {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  gap: 2rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel__slidenav::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  bottom: 20%;
+  background-color: gray;
+  z-index: -1;
+}
+.carousel__slidenav-control {
+  --bg-slidenav-control: gray;
+  border: none;
+  width: .5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--bg-slidenav-control);
+}
+.carousel__slidenav-control.active {
+  --bg-slidenav-control: white;
+}
+.carousel__slidenav-control:hover,
+.carousel__slidenav-control:focus-visible {
+  --bg-slidenav-control: white;
+}
+.carousel__slidenav-control:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+/* # Remove Animation If User Prefers None Of It # */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

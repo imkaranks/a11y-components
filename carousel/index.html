@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>A11Y Components | Carousel</title>
+</head>
+<body>
+  <header class="carousel" role="banner" aria-labelledby="carousel-heading" data-slide="0">
+    <div class="carousel__cont container">
+      <h1 id="carousel-heading" class="visually-hidden">Lorem, ipsum dolor.</h1>
+
+      <ul class="carousel__slide-controls">
+        <li>
+          <button type="button" class="btn-slide" data-autoslide="true">
+            <svg class="btn-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+              <title>Play</title>
+              <path d="M320 853V293l440 280-440 280Zm60-280Zm0 171 269-171-269-171v342Z"/>
+            </svg>
+  
+            <svg class="btn-pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+              <title>Pause</title>
+              <path d="M525 856V296h235v560H525Zm-325 0V296h235v560H200Zm385-60h115V356H585v440Zm-325 0h115V356H260v440Z"/>
+            </svg>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="btn-slide" id="btn-prev-slide">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+              <title>Previous</title>
+              <path d="M561 816 320 575l241-241 43 43-198 198 198 198-43 43Z"/>
+            </svg>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="btn-slide" id="btn-next-slide">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+              <title>Next</title>
+              <path d="m375 816-43-43 198-198-198-198 43-43 241 241-241 241Z"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+
+      <ul class="carousel__slides" id="slideList">
+        <li class="carousel__slide" data-slide="0">
+          <article class="carousel__slide-content">
+            <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YW5pbWFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" class="carousel__slide-image" alt="brown and black tiger lying on ground">
+            <div>
+              <h2>Animal Kingdom</h2>
+            </div>
+          </article>
+        </li>
+        <li class="carousel__slide" data-slide="1">
+          <article class="carousel__slide-content">
+            <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="carousel__slide-image" alt="brown deer standing on green grass field during daytime">
+            <div>
+              <h2>Animal Kingdom</h2>
+            </div>
+          </article>
+        </li>
+        <li class="carousel__slide" data-slide="2">
+          <article class="carousel__slide-content">
+            <img src="https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YW5pbWFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" class="carousel__slide-image" alt="orange parrot resting on a branch of tree">
+            <div>
+              <h2>Animal Kingdom</h2>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <ul class="carousel__slidenav" id="slideNav">
+        <li>
+          <button class="carousel__slidenav-control active" data-slide="0">
+            <span class="visually-hidden">brown and black tiger lying on ground</span>
+          </button>
+        </li>
+        <li>
+          <button class="carousel__slidenav-control" data-slide="1">
+            <span class="visually-hidden">brown deer standing on green grass field during daytime</span>
+          </button>
+        </li>
+        <li>
+          <button class="carousel__slidenav-control" data-slide="2">
+            <span class="visually-hidden">orange parrot resting on a branch of tree</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <script src="index.js"></script>
+</body>
+</html>
