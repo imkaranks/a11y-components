@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>A11Y Components | Tabs</title>
+</head>
+
+<body>
+  <div class="tabbed-content">
+    <ul class="tabs-list" role='tablist'>
+      <li class="current">
+        <a aria-controls="apples" aria-selected="true" href="#apples" id="tab-apples" role='tab' class='tab selected'>
+          Apples
+        </a>
+      </li>
+
+      <li>
+        <a aria-controls="bananas" href="#bananas" aria-selected='false' id="tab-bananas" role='tab' tabindex='-1' class='tab'>
+          Bananas
+        </a>
+      </li>
+
+      <li>
+        <a aria-controls='pears' aria-selected="false" href="#pears" id="tab-pears" role='tab' tabindex='-1' class='tab'>
+          Pears
+        </a>
+      </li>
+    </ul>
+
+    <div aria-labelledby="tab-apples" class="tab-panel current" id="apples" role='tabpanel'>
+      <h2>Apples</h2>
+      <p> Lorem ipsum dolor sit amet, urna class vestibulum tincidunt atque, habitasse sit wisi erat dapibus. Vitae
+        curae natoque a, donec nulla conubia in mollis. Sapien pede in tortor, lectus neque vitae in et, vitae aliquam
+        eget orci at, non turpis faucibus id morbi. Elit tempor turpis donec inceptos, fringilla arcu sollicitudin
+        ligula magna, sed justo viverra lacus erat, vestibulum id in justo nulla. Viverra dui leo donec, aptent deserunt
+        nostra magnis lobortis, id ultrices ac aenean, interdum vestibulum rhoncus phasellus libero.</p>
+    </div>
+
+    <div aria-labelledby="tab-bananas" class="tab-panel" role='tabpanel' id="bananas" hidden>
+      <h2>Bananas</h2>
+      <p>Lorem ipsum dolor sit amet, urna class vestibulum tincidunt atque, habitasse sit wisi erat dapibus. Vitae curae
+        natoque a, donec nulla conubia in mollis. Sapien pede in tortor, lectus neque vitae in et, vitae aliquam eget
+        orci at, non turpis faucibus id morbi. Elit tempor turpis donec inceptos, fringilla arcu sollicitudin ligula
+        magna, sed justo viverra lacus erat, vestibulum id in justo nulla. Viverra dui leo donec, aptent deserunt nostra
+        magnis lobortis, id ultrices ac aenean, interdum vestibulum rhoncus phasellus libero.</p>
+    </div>
+
+    <div aria-labelledby="tab-pears" class="tab-panel" id="pears" role='tabpanel' hidden>
+      <h2>Pears</h2>
+      <p>Lorem ipsum dolor sit amet, urna class vestibulum tincidunt atque, habitasse sit wisi erat dapibus. Vitae curae
+        natoque a, donec nulla conubia in mollis. Sapien pede in tortor, lectus neque vitae in et, vitae aliquam eget
+        orci at, non turpis faucibus id morbi. Elit tempor turpis donec inceptos, fringilla arcu sollicitudin ligula
+        magna, sed justo viverra lacus erat, vestibulum id in justo nulla. Viverra dui leo donec, aptent deserunt nostra
+        magnis lobortis, id ultrices ac aenean, interdum vestibulum rhoncus phasellus libero.</p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
