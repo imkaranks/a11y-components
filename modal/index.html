@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js" defer></script>
+  <title>A11Y Components | Modal</title>
+</head>
+
+<body>
+  <main id="main-content" aria-hidden="false" role="main">
+    <p>where all main content for rest of page is.</p>
+
+    <button id='modal-open-button' class="modal__open-button" title='Open registration form'>
+      open
+    </button>
+  </main>
+
+  <div id='modal' aria-hidden='true' aria-labelledby='modal-title' aria-describedby='modal-description' role='dialog'>
+    <div id='modal-description' class='visually-hidden'>
+      Beginning of dialog window. It begins with a heading 1 called &quot;Registration Form&quot;. Escape will cancel
+      and close the window. This form does not collect any actual information.
+    </div>
+
+    <h1 id='modal-title' tabindex='0'>Registration Form</h1>
+    <p>
+      These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader
+      users read this text with the virtual cursor?
+    </p>
+
+    <button id='modal-close-button' class="modal__close-button" title='Close registration form'>
+      close
+    </button>
+
+  </div>
+  <div class="modal-overlay"></div>
+</body>
+
+</html>
